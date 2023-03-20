@@ -1,0 +1,95 @@
+body{
+    background-color: #71A3D5  ;
+}
+
+
+
+.containerForm{
+    height: 500px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;  
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-family: "Manrope",Arial,Helvetica Neue,Helvetica,sans-serif;
+    position: relative;
+    top: 80px;
+    border-radius:10px ;
+    box-shadow: 1px 1px 3px 3px rgba(0,0,0, 0.2);
+}
+
+#logo{
+    padding: 10px;
+    height: 120px;
+    margin-top: 45px;
+    margin-bottom: -90px;
+    position: relative;
+    top: -90px; 
+}
+
+#labeluser{
+    position: relative;
+    margin-right: 170px;
+    top: -4px;
+    color: rgb(90, 90, 90);
+}
+
+#labelpassword{
+    position: relative;
+    margin-right: 240px;
+    top: -4px;
+    color: rgb(90, 90, 90);
+}
+
+
+#btnLogin{
+    margin-top: 10px;
+    width: 358px;
+    height: 40px;
+    font-size: 1.3rem;
+    background-color: rgb(101, 166, 250);
+    border: none;
+    color: white ;
+    border-radius:10px;
+    cursor: pointer;
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0, 0.3);
+}
+
+.loginBtn:focus{
+    outline: none;
+}
+
+#account{
+    margin-top: 20px;
+    font-size: 1rem;
+    position: relative;
+    right: 50px;
+}
+
+#accountRegister{
+    color: blue;
+    cursor: pointer;
+}
+
+.inputsLogin:focus{
+    outline: 2px rgb(0, 85, 243) solid;
+    
+}
+
+.inputsLogin:focus-visible{
+    border: none ;
+}
+
+
+.inputsLogin{
+    width: 340px;
+    height: 35px;
+    font-size: 1.2rem;
+    padding-left: 12px;
+    border-radius: 10px;
+    border: solid 1px;
+    margin-bottom: 20px;
+    position: relative;
+}
