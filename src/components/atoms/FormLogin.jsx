@@ -4,48 +4,43 @@ import '../../assets/styles/FormLogin.css'
 import Logo from '../../assets/img/Bus.png'
 
 
-function FormLogin() {
-
-    const navigate = useNavigate();
-    const Form = useRef();
-    const endPoint = "http://34.225.239.102/api/iniciar";
-  
-    const handlerClick = (e) => {
+function FormLogin (){
+  const navigate = useNavigate();
+  const Form = useRef();
+  const endPoint = "http://34.225.239.102/api/iniciar";
+  const handlerClick = (e) => {
       e.preventDefault();
       const newForm = new FormData(Form.current);
       if(newForm.get("usuario") === "" || newForm.get("contrasenia") === ""){
-        alert("campos vacios");
-      }else{
-        
-      const options = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          usuario: newForm.get("usuario"),
-          contrasenia: newForm.get("contrasenia"),
-        }),
-      };
-  
-      fetch(endPoint, options)
-        .then((response) => response.json())
-  
-        .then((data) => {
-          if(data.status === true){
-            navigate("/busregister");
-          }else{
-            alert("Datos incorrectos")
-          }
-        });
+          alert("campos vacios");
+      } else {
+          const options = {
+              method: "POST",
+              headers: {
+              "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+              usuario: newForm.get("usuario"),
+              contrasenia: newForm.get("contrasenia"),
+              }),
+          };
+
+          fetch(endPoint, options)
+          .then(response => response.json())
+          .then(data => {
+              if(data.status === true){
+                  navigate("/busregister");
+              }else{
+                  alert("Tu nombre de usuario o contraseña esta incorrecta")
+              }
+          });
       }
-    };
+  };
 
-    return ( 
-
-        <>
-        <center>
-            <form id="formLogin" href={Form}>
+  return (
+      <>
+       <center>
+            <form id="formLogin" ref={Form}>
                 <div className="containerForm">
                     <img src={Logo} alt="logo" id='logo'/>
                     
@@ -62,9 +57,9 @@ function FormLogin() {
                 </div>
             </form>
         </center>
-        </>
-        
-     );
+
+      </>
+  );
 }
 
-export default FormLogin;
+export default FormLogin;

@@ -38,6 +38,7 @@ function FormBusRegister() {
         if(data.status === true){
             console.log("Creado exitosamente");
             alert("la Alta fue Exitosa");
+            navigate("/");
           }
       });
     }
